@@ -1,12 +1,17 @@
 from io import open
+import sys
 
-file = open('accounts.txt','a')
+def addAccount():
+    file = open('accounts','a',encoding='UTF-8')
 
-user = input('Ingrese user: ')
-password = input('Ingrese password')
+    user = input('Ingrese user: ')
+    password = input('Ingrese password: ')
+    where = input('Ingrese lugar de la password: ')
 
-account = '{usuario}|{password};'
+    a = f"{user}|{password}|{where};"
 
-file.write(account)
+    file.write(a)
 
-file.close()
+    file.close()
+
+sys.modules[__name__] = addAccount
